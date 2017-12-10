@@ -1,0 +1,32 @@
+debug = false
+checkNewVersion = false
+logLevel = "ERROR"
+defaultEntryPoints = ["https","http"]
+
+[accessLog]
+format = "json"
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  compress = true
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+  [entryPoints.https]
+  address = ":443"
+  compress = true
+  [entryPoints.https.tls]
+
+[retry]
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "dev500.com"
+watch = true
+exposedbydefault = false
+
+[acme]
+email = "ops@dev500.com"
+storage = "acme.json"
+entryPoint = "https"
+OnHostRule = true

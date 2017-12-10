@@ -1,0 +1,15 @@
+- name: setup docker compose files
+  copy: src=traefik dest=/opt/
+
+- name: create acme.json if not exists
+  copy:
+    content: ""
+    dest: /opt/traefik/acme.json
+    force: no
+    mode: 0600
+
+- name: create docker network named web-gateway if not exists
+  docker_network: name=web-gateway state=present
+
+- name: docker-compose up
+  docker_service: project_src=/opt/traefik state=present
