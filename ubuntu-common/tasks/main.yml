@@ -25,6 +25,7 @@
     - nano
     - nload
     - htop
+    - iotop
     - zip
     - unzip
     - apt-transport-https
