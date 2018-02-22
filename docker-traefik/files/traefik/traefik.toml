@@ -29,4 +29,7 @@ exposedbydefault = false
 email = "ops@dev500.com"
 storage = "acme.json"
 entryPoint = "https"
+acmeLogging = true
 OnHostRule = true
+  [acme.httpChallenge]
+    entryPoint = "http"
