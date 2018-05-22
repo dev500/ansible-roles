@@ -24,4 +24,6 @@
   apt: name=python-pip
 
 - name: install docker-compose package using pip
-  pip: name=docker-compose
+  pip:
+    name: docker-compose
+    version: 1.21.2
